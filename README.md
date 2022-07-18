@@ -1,18 +1,16 @@
-Android binary manifest XML file parser library for Golang
-=======
+# Android binary manifest XML file parser library for Golang
 
 This is a golang port of [github.com/xgouchet/AXML](http://github.com/xgouchet/AXML).
 
 This package aims to parse an android binary mainfest xml file on an apk file.
 
-Installation
-------
+## Installation
+
 ```
-go get github.com/lunny/axmlParser
+go get github.com/RandyWei/axmlParser
 ```
 
-Usage
-------
+## Usage
 
 ```Go
 package main
@@ -20,7 +18,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/lunny/axmlParser"
+	"github.com/RandyWei/axmlParser"
 )
 
 func main() {

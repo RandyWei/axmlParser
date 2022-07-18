@@ -6,7 +6,7 @@ import (
 )
 
 func TestParser(t *testing.T) {
-	var filename = "a.apk"
+	var filename = "/Users/wei/Downloads/仕途联线_1.0.0.apk"
 
 	listener := new(AppNameListener)
 	_, err := ParseApk(filename, listener)

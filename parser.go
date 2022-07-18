@@ -380,7 +380,7 @@ func (parser *Parser) getStringFromStringTable(offset int) string {
 			chars[i] = parser.Data[offset+2+i] // NOPMD
 		}
 	} else {
-		strLength = ((int(parser.Data[offset+1] << 8)) & 0xFF00) |
+		strLength = ((int(parser.Data[offset+1]) << 8) & 0xFF00) |
 			(int(parser.Data[offset]) & 0xFF)
 		chars = make([]byte, strLength) // NOPMD
 		for i := 0; i < strLength; i++ {
