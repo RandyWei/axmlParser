@@ -17,15 +17,3 @@ func TestParser(t *testing.T) {
 	fmt.Println("Init package is", listener.PackageName,
 		"Activity is", listener.ActivityName)
 }
-
-func TestIpa(t *testing.T) {
-	var filename = "/Users/wei/Downloads/Runner 2022-07-19 13-29-45/Info.plist"
-
-	listener := new(InfoPlistListener)
-	_, err := ParseIpa(filename, listener)
-	if err != nil {
-		t.Error(err)
-	}
-
-	fmt.Println("Init package is", listener.BundleId)
-}
