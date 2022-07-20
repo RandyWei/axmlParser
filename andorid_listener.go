@@ -1,6 +1,6 @@
 package axmlParser
 
-type AppNameListener struct {
+type AndroidListener struct {
 	PackageName      string
 	VersionName      string
 	VersionCode      string
@@ -9,13 +9,13 @@ type AppNameListener struct {
 	findMainActivity bool
 }
 
-func (listener *AppNameListener) StartDocument() {
+func (listener *AndroidListener) StartDocument() {
 }
 
 /**
  * Receive notification of the end of a document.
  */
-func (listener *AppNameListener) EndDocument() {
+func (listener *AndroidListener) EndDocument() {
 }
 
 /**
@@ -27,7 +27,7 @@ func (listener *AppNameListener) EndDocument() {
  * @param uri
  *            the Namespace URI the prefix is mapped to
  */
-func (listener *AppNameListener) StartPrefixMapping(prefix, uri string) {
+func (listener *AndroidListener) StartPrefixMapping(prefix, uri string) {
 }
 
 /**
@@ -39,7 +39,7 @@ func (listener *AppNameListener) StartPrefixMapping(prefix, uri string) {
  * @param uri
  *            the Namespace URI the prefix is mapped to
  */
-func (listener *AppNameListener) EndPrefixMapping(prefix, uri string) {}
+func (listener *AndroidListener) EndPrefixMapping(prefix, uri string) {}
 
 /**
  * Receive notification of the beginning of an element.
@@ -59,7 +59,7 @@ func (listener *AppNameListener) EndPrefixMapping(prefix, uri string) {}
  *            attributes, it shall be an empty Attributes object. The value
  *            of this object after startElement returns is undefined
  */
-func (listener *AppNameListener) StartElement(uri, localName, qName string,
+func (listener *AndroidListener) StartElement(uri, localName, qName string,
 	attrs []*Attribute) {
 	if listener.findMainActivity {
 		return
@@ -122,7 +122,7 @@ func (listener *AppNameListener) StartElement(uri, localName, qName string,
  *            the qualified XML name (with prefix), or the empty string if
  *            qualified names are not available
  */
-func (listener *AppNameListener) EndElement(uri, localName, qName string) {}
+func (listener *AndroidListener) EndElement(uri, localName, qName string) {}
 
 /**
  * Receive notification of text.
@@ -130,7 +130,7 @@ func (listener *AppNameListener) EndElement(uri, localName, qName string) {}
  * @param data
  *            the text data
  */
-func (listener *AppNameListener) Text(data string) {}
+func (listener *AndroidListener) Text(data string) {}
 
 /**
  * Receive notification of character data (in a <![CDATA[ ]]> block).
@@ -138,7 +138,7 @@ func (listener *AppNameListener) Text(data string) {}
  * @param data
  *            the text data
  */
-func (listener *AppNameListener) CharacterData(data string) {}
+func (listener *AndroidListener) CharacterData(data string) {}
 
 /**
  * Receive notification of a processing instruction.
@@ -152,6 +152,6 @@ func (listener *AppNameListener) CharacterData(data string) {}
  * @throws org.xml.sax.SAXException
  *             any SAX exception, possibly wrapping another exception
  */
-func (listener *AppNameListener) ProcessingInstruction(target, data string) {
+func (listener *AndroidListener) ProcessingInstruction(target, data string) {
 
 }
