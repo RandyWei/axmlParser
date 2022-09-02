@@ -1,6 +1,8 @@
 package axmlParser
 
 type AndroidListener struct {
+	AppName          string
+	Icon             string
 	PackageName      string
 	VersionName      string
 	VersionCode      string
@@ -76,6 +78,20 @@ func (listener *AndroidListener) StartElement(uri, localName, qName string,
 				break
 			case "versionName":
 				listener.VersionName = attr.Value
+				break
+			}
+		}
+		return
+	}
+
+	if localName == "application" {
+		for _, attr := range attrs {
+			switch attr.Name {
+			case "label":
+				listener.AppName = attr.Value
+				break
+			case "icon":
+				listener.Icon = attr.Value
 				break
 			}
 		}

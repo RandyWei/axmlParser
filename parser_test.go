@@ -6,7 +6,7 @@ import (
 )
 
 func TestParser(t *testing.T) {
-	var filename = "/Users/wei/Downloads/仕途联线_1.0.0.apk"
+	var filename = "/Users/wei/Downloads/仕途联线_1.0.2.apk"
 
 	listener := new(AndroidListener)
 	_, err := ParseApk(filename, listener)
@@ -15,5 +15,5 @@ func TestParser(t *testing.T) {
 	}
 
 	fmt.Println("Init package is", listener.PackageName,
-		"Activity is", listener.ActivityName)
+		"Activity is", listener.ActivityName, "AppName ", listener.AppName, " Icon ", listener.Icon)
 }
